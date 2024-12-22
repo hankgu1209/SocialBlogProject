@@ -28,7 +28,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Email already registered.')
 
    # check username duplicated
-   def check_username(self,field):
+    def check_username(self,field):
        if User.query.filter_by(username=field.data).first():
            raise ValidationError('Username already registered.')
 
